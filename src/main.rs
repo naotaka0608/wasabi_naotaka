@@ -105,7 +105,7 @@ fn locate_graphic_protocol<'a>(efi_system_table: &EfiSystemTable,) -> Result<&'a
 
 #[no_mangle]
 //fn main() {
-fn efi_main() {
+fn efi_main(_image_handle: EfiHandle, efi_system_table: &EfiSystemTable) {
     let efi_graphics_output_protocol = locate_graphic_protocol(efi_system_table).unwrap();
     let vram_addr = efi_graphics_output_protocol.mode.frame_buffer_base;
     let vram_byte_size = efi_graphics_output_protocol.mode.frame_buffer_size;
