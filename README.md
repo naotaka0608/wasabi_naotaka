@@ -14,6 +14,10 @@ rustc v1.87.0
 - 実行
 
 ```bash
+rustup target add x86_64-unknown-uefi
+cargo build --target x86_64-unknown-uefi
+cargo run --target x86_64-unknown-uefi
+
 mkdir -p third_party/ovmf
 cd third_party/ovmf
 wget https://github.com/hikalium/wasabi/raw/main/third_party/ovmf/RELEASEX64_OVMF.fd
